@@ -8,7 +8,7 @@ class Application
      item_name = req.path.split("/items/<ITEM NAME>").last
      item = @@items.find{|i| i.name == item_name}
 
-      if @@item.include?(item)
+      if @@item.include?(item_name)
         resp.write item.price
       else
         resp.write "Item not found"
